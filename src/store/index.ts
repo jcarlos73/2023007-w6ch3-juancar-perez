@@ -4,10 +4,9 @@ import {
   configureStore,
 } from "@reduxjs/toolkit";
 import { TypedUseSelectorHook, useDispatch, useSelector } from "react-redux";
+import { todosReducer } from "./toDos/toDosSlice";
 
-const rootReducer = combineReducers({
-  // insert the slices reducers
-});
+const rootReducer = combineReducers({ ToDosState: todosReducer });
 
 export const setupStore = (preloadedState?: PreloadedState<RootState>) => {
   return configureStore({
